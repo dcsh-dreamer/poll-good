@@ -4,7 +4,7 @@ from django.db import models
 
 class Poll(models.Model):
     # 投票主題文字，至多 200 字
-    subject = models.CharField(max_length=200)
+    subject = models.CharField('投票主題', max_length=200)
     # 投票建立日期，在建立時若未指定，則自動填入建立時的時間
     date_created = models.DateField(auto_now_add=True)
 

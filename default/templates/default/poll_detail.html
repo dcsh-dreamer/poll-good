@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ poll.subject }}</h1>
+<a href="/option/create/{{ poll.id }}">新增選項</a>
+<ul>
+    {% for option in options %}
+    <li><a href="/option/{{ option.id }}/">{{ option.title }}</a> : {{option.count}} | <a href="/option/{{ option.id }}/update/">修改</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
