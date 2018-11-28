@@ -1,4 +1,5 @@
 from django.urls import path
+from django.views.generic import RedirectView
 from . import views
 
 urlpatterns = [
@@ -11,4 +12,5 @@ urlpatterns = [
     path('option/<int:pk>/update/', views.OptionUpdate.as_view()),
     path('poll/<int:pk>/delete/', views.PollDelete.as_view()), 
     path('option/<int:pk>/delete/', views.OptionDelete.as_view()), 
+    path('', RedirectView.as_view(url='poll/')),
 ]
